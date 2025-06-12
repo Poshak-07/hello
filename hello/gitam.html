@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GITAM Grade Card - Annam Poshak</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .container, .card {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    .center {
+      text-align: center;
+    }
+    .logo {
+      width: 80px;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 12px;
+      font-size: 16px;
+      margin: 20px auto;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      display: block;
+      margin: auto;
+      padding: 10px 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    h1, h2, h3 {
+      margin: 5px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background: #eee;
+    }
+    .info {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    .grade-summary {
+      margin-top: 10px;
+      text-align: right;
+      font-weight: bold;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Landing Page -->
+  <div class="container" id="landingPage">
+    <h2 class="center">Student Result Portal</h2>
+    <input type="text" id="regNo" placeholder="Enter Admission / Registration Number">
+    <button onclick="showGradeCard()">Submit</button>
+  </div>
+
+  <!-- Grade Card -->
+  <div class="card hidden" id="gradeCard">
+    <div class="center">
+      <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/GITAM_University_logo.png" class="logo" alt="GITAM Logo" />
+      <h2>GANDHI INSTITUTE OF TECHNOLOGY AND MANAGEMENT</h2>
+      <h3>(Deemed to be University)</h3>
+      <p><em>(Est. u/s 3 of the UGC Act, 1956)</em></p>
+      <h2>GRADE CARD</h2>
+      <h3>B.Tech Degree Examination<br>IV Semester, April 2025</h3>
+    </div>
+
+    <div class="info">
+      <strong>Regd. No:</strong> 2023000254<br/>
+      <strong>Name:</strong> Annam Poshak<br/>
+      <strong>Branch:</strong> Computer Science and Engineering (Data Science)
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Name of the Course</th>
+          <th>Credits</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>CLAD1031</td><td>Practicing Verbal Ability and Quantitative Aptitude (Soft Skills 4)</td><td>1</td><td>A</td></tr>
+        <tr><td>CSEN1101</td><td>Operating Systems</td><td>3</td><td>B</td></tr>
+        <tr><td>CSEN1111</td><td>Object Oriented Programming with Java</td><td>2</td><td>B+</td></tr>
+        <tr><td>CSEN2011</td><td>Computer Organization and Architecture</td><td>3</td><td>B+</td></tr>
+        <tr><td>CSEN2012</td><td>Computer Networks</td><td>4</td><td>B+</td></tr>
+        <tr><td>CSEN1511</td><td>Advanced Data Structures</td><td>3</td><td>C</td></tr>
+        <tr><td>HSMC1102</td><td>Universal Human Values 2: Understanding Harmony</td><td>1</td><td>S</td></tr>
+        <tr><td>MATH2031</td><td>Probability and Statistics</td><td>3</td><td>B</td></tr>
+        <tr><td>MECH1001</td><td>Design Thinking</td><td>1</td><td>A</td></tr>
+        <tr><td>PHYS1021</td><td>Principles of Quantum Mechanics</td><td>4</td><td>B+</td></tr>
+      </tbody>
+    </table>
+
+    <div class="grade-summary">
+      SGPA: 7.3 &nbsp;&nbsp;&nbsp; CGPA: 7.45
+    </div>
+
+    <div class="footer">
+      Printed on: 12-Jun-2025<br><br>
+      <ol>
+        <li>This is a digitally generated certificate. The format may differ from the physical document issued by the University.</li>
+        <li>For any clarification, please contact: controllerofexaminations@gitam.edu</li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    function showGradeCard() {
+      const reg = document.getElementById("regNo").value.trim();
+      if (reg === "") {
+        alert("Please enter your Admission / Registration Number.");
+        return;
+      }
+      document.getElementById("landingPage").classList.add("hidden");
+      document.getElementById("gradeCard").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
